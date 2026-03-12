@@ -5,7 +5,7 @@ const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 export async function analyzeLyrics(lyrics: string): Promise<LyricalAnalysis> {
   const response = await ai.models.generateContent({
-    model: "gemini-3.1-pro-preview",
+    model: "gemini-1.5-flash",
     contents: [{ parts: [{ text: `Analyze these lyrics as a Senior Music Analyst and Linguistic Expert:\n\n${lyrics}` }] }],
     config: {
       systemInstruction: `You are a Senior Music Analyst and Linguistic Expert. Your goal is to dissect song lyrics to uncover their deepest emotional layers, thematic nuances, and cultural significance. You don't just summarize; you interpret the "soul" of the song.
